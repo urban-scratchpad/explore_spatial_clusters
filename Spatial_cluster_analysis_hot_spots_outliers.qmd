@@ -1,0 +1,67 @@
+---
+title: "Spatial_Cluster_analysis_hot_spots_outliers"
+format: html
+---
+
+## Overview
+
+
+
+Resources
+- [Esri Spatial Data Analyticscourse](https://www.esri.com/training/mooc/player/5d76dcf7e9ccda09bef61294/6386f4d0ba09d7168f6abdfa/)
+- [Heatherlee Leary's Hot Spot Analysis](https://rpubs.com/heatherleeleary/hotspot_getisOrd_tut)
+
+**Rework and focus more on these explanations** 
+- [Kam Tin Seong' lesson](https://rpubs.com/tskam/IS415-Hands-on_Ex07)
+- [sfdep](https://sfdep.josiahparry.com/)
+
+```{r}
+#| label: arcgis-bridge
+
+# Bridge to ArcGIS
+library(arcgisbinding)
+
+# ArcGIS License verification, establish conxn
+arc.check_product()
+
+
+
+
+
+# read US Counties layer from SNAP data
+
+gis_data <- st_read("C:/EsriTraining/PatternDetection_SpaceTime/patterndetection_spacetime.gdb", layer = 'US_Counties')
+
+head(gis_data)
+dim(gis_data)
+```
+
+
+## Preliminaries
+
+### Load libraries
+
+```{r}
+#| label: load-libraries 
+
+library(sf)
+library(tmap)
+library(sfdep)
+library(spdep)
+library(tidyverse) # includes dplyr, ggplot2, 
+library(RColorBrewer) # color palettes
+```
+
+
+### 
+
+```{r}
+
+# read US Counties layer from SNAP data
+
+gis_data <- st_read("C:/EsriTraining/PatternDetection_SpaceTime/patterndetection_spacetime.gdb", layer = 'US_Counties')
+
+head(gis_data)
+dim(gis_data)
+```
+
